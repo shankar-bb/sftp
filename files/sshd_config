@@ -20,3 +20,6 @@ ChrootDirectory %h
 
 # Enable this for more logs
 #LogLevel VERBOSE
+
+# Listen on higher ports to run this in a k8s cluster
+Port 3762
