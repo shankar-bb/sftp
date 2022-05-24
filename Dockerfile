@@ -1,5 +1,5 @@
 FROM debian:bullseye
-MAINTAINER Adrian Dvergsdal [atmoz.net]
+LABEL "maintainer"="Shankar Kallakuri"
 
 # Steps done in one RUN layer:
 # - Install packages
@@ -13,8 +13,9 @@ RUN apt-get update && \
 
 COPY files/sshd_config /etc/ssh/sshd_config
 COPY files/create-sftp-user /usr/local/bin/
+COPY files/users.conf /etc/sftp/users.conf
 COPY files/entrypoint /
 
-EXPOSE 22
+EXPOSE 3762
 
 ENTRYPOINT ["/entrypoint"]
